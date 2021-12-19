@@ -31,7 +31,7 @@
             Conteo
           </v-card-title>
           <v-card-subtitle>
-            Aplicación para conteo de votos de la segunda vuelta presidencial en Chile (2021). Estos datos no son almacenados y la aplicación solo es una herramienta de ayuda al conteo.
+            Para conteo de votos de la segunda vuelta presidencial en Chile (2021). Recuerda que el principal objetivo como apoderade es defender y observar los votos, no necesariamente el conteo! La web solo guarda los votos en tu celular.
           </v-card-subtitle>
           <v-card-text>
             <v-simple-table v-show="lado==='diestro'">
