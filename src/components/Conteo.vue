@@ -38,7 +38,7 @@
               <template v-slot:default>
                 <tbody>
                   <tr>
-                    <td class="px-0">1. Gabriel Boric</td>
+                    <td class="px-0">Boric</td>
                     <td>{{ votosBoric }}</td>
                     <td class="text-center">
                       <v-btn @click="changeVoto(-1, 'boric')" color="error">
@@ -52,7 +52,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="px-0">2. José Antonio Kast</td>
+                    <td class="px-0">Kast</td>
                     <td>{{ votosKast }}</td>
                     <td class="text-center">
                       <v-btn @click="changeVoto(-1, 'kast')" color="error">
@@ -110,7 +110,7 @@
                         <v-icon>{{mdiPlus}}</v-icon>
                       </v-btn>
                     </td>
-                    <td class="px-0">1. Gabriel Boric</td>
+                    <td class="px-0">Boric</td>
                     <td>{{ votosBoric }}</td>
                   </tr>
                   <tr>
@@ -124,7 +124,7 @@
                         <v-icon>{{mdiPlus}}</v-icon>
                       </v-btn>
                     </td>
-                    <td class="px-0">2. José Antonio Kast</td>
+                    <td class="px-0">Kast</td>
                     <td>{{ votosKast }}</td>
                   </tr>
                   <tr>
