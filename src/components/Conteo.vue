@@ -159,6 +159,7 @@
               </template>
             </v-simple-table>
           </v-card-text>
+          <p class="text-center">Votos totales: {{ votosTotal }}</p>
           <v-card-actions>
             <v-row>
               <v-col cols="12" md="6">
@@ -205,6 +206,11 @@ export default {
       dialogLimpiar: false,
       lado: 'diestro'
     }
+  },
+  computed: {
+   votosTotal() {
+    return this.votosBoric + this.votosKast + this.votosNulo + this.votosBlanco;
+   }
   },
   methods: {
     reset() {
