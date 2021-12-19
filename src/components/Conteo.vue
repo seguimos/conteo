@@ -159,7 +159,7 @@
               </template>
             </v-simple-table>
           </v-card-text>
-          <p class="text-center">Votos totales: {{ votosTotal }}</p>
+          <p class="text-center"><b>Votos totales:</b> {{ votosTotal }}</p>
           <v-card-actions>
             <v-row>
               <v-col cols="12" md="6">
