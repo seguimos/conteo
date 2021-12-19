@@ -207,6 +207,34 @@ export default {
       lado: 'diestro'
     }
   },
+  mounted() {
+    if (localStorage.votosBoric) {
+      this.votosBoric = parseInt(localStorage.votosBoric) || 0;
+    }
+    if (localStorage.votosKast) {
+      this.votosKast = parseInt(localStorage.votosKast) || 0;
+    }
+    if (localStorage.votosNulo) {
+      this.votosNulo = parseInt(localStorage.votosNulo) || 0;
+    }
+    if (localStorage.votosBlanco) {
+      this.votosBlanco = parseInt(localStorage.votosBlanco) || 0;
+    }
+  },
+  watch: {
+    votosBoric(aVotosBoric) {
+      localStorage.votosBoric = aVotosBoric;
+    },
+    votosKast(aVotosKast) {
+      localStorage.votosKast = aVotosKast;
+    },
+    votosNulo(aVotosNulo) {
+      localStorage.votosNulo = aVotosNulo;
+    },
+    votosBlanco(aVotosBlanco) {
+      localStorage.votosBlanco = aVotosBlanco;
+    }
+  },
   computed: {
    votosTotal() {
     return this.votosBoric + this.votosKast + this.votosNulo + this.votosBlanco;
