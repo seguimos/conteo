@@ -1,28 +1,35 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <v-btn text href="https://www.seguimos.cl" target="_blank" class="grey--text">
+        🌳 Seguimos
+      </v-btn>
+    </v-app-bar>
+    <v-main>
+      <Conteo/>
+    </v-main>
+    <v-footer fixed>
+      <a style="text-decoration: none" href="https://www.seguimos.cl" target="_blank" class="black--text">🌳 Seguimos</a>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Conteo from './components/Conteo';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    Conteo,
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>

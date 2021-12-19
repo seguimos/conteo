@@ -1,4 +1,6 @@
-# seguimos_conteo
+# Conteo Seguimos
+
+Herramienta de conteo de votos para la segunda vuelta presidencial en Chile (2021)
 
 ## Project setup
 ```
