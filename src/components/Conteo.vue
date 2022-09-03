@@ -31,36 +31,36 @@
             Conteo
           </v-card-title>
           <v-card-subtitle>
-            Para conteo de votos de la segunda vuelta presidencial en Chile (2021). Recuerda que el principal objetivo como apoderade es defender y observar los votos, no necesariamente el conteo! La web solo guarda los votos en tu celular.
+            Para apoyar el conteo de votos del plebiscito de salida del proceso constituyente en Chile (2022). Recuerda que el principal objetivo como apoderade es defender y observar los votos, no necesariamente el conteo! La web solo guarda los votos en tu celular.
           </v-card-subtitle>
           <v-card-text>
             <v-simple-table v-show="lado==='diestro'">
               <template v-slot:default>
                 <tbody>
                   <tr>
-                    <td class="px-0">Boric</td>
-                    <td>{{ votosBoric }}</td>
+                    <td class="px-0">Apruebo</td>
+                    <td>{{ votosApruebo }}</td>
                     <td class="text-center">
-                      <v-btn @click="changeVoto(-1, 'boric')" color="error">
+                      <v-btn @click="changeVoto(-1, 'apruebo')" color="error">
                         <v-icon>{{mdiMinus}}</v-icon>
                       </v-btn>
                     </td>
                     <td class="text-center">
-                      <v-btn @click="changeVoto(1, 'boric')" color="success">
+                      <v-btn @click="changeVoto(1, 'apruebo')" color="success">
                         <v-icon>{{mdiPlus}}</v-icon>
                       </v-btn>
                     </td>
                   </tr>
                   <tr>
-                    <td class="px-0">Kast</td>
-                    <td>{{ votosKast }}</td>
+                    <td class="px-0">Rechazo</td>
+                    <td>{{ votosRechazo }}</td>
                     <td class="text-center">
-                      <v-btn @click="changeVoto(-1, 'kast')" color="error">
+                      <v-btn @click="changeVoto(-1, 'rechazo')" color="error">
                         <v-icon>{{mdiMinus}}</v-icon>
                       </v-btn>
                     </td>
                     <td class="text-center">
-                      <v-btn @click="changeVoto(1, 'kast')" color="success">
+                      <v-btn @click="changeVoto(1, 'rechazo')" color="success">
                         <v-icon>{{mdiPlus}}</v-icon>
                       </v-btn>
                     </td>
@@ -101,31 +101,31 @@
                 <tbody>
                   <tr>
                     <td class="text-center">
-                      <v-btn @click="changeVoto(-1, 'boric')" color="error">
+                      <v-btn @click="changeVoto(-1, 'apruebo')" color="error">
                         <v-icon>{{mdiMinus}}</v-icon>
                       </v-btn>
                     </td>
                     <td class="text-center">
-                      <v-btn @click="changeVoto(1, 'boric')" color="success">
+                      <v-btn @click="changeVoto(1, 'apruebo')" color="success">
                         <v-icon>{{mdiPlus}}</v-icon>
                       </v-btn>
                     </td>
-                    <td class="px-0">Boric</td>
-                    <td>{{ votosBoric }}</td>
+                    <td class="px-0">Apruebo</td>
+                    <td>{{ votosApruebo }}</td>
                   </tr>
                   <tr>
                     <td class="text-center">
-                      <v-btn @click="changeVoto(-1, 'kast')" color="error">
+                      <v-btn @click="changeVoto(-1, 'rechazo')" color="error">
                         <v-icon>{{mdiMinus}}</v-icon>
                       </v-btn>
                     </td>
                     <td class="text-center">
-                      <v-btn @click="changeVoto(1, 'kast')" color="success">
+                      <v-btn @click="changeVoto(1, 'rechazo')" color="success">
                         <v-icon>{{mdiPlus}}</v-icon>
                       </v-btn>
                     </td>
-                    <td class="px-0">Kast</td>
-                    <td>{{ votosKast }}</td>
+                    <td class="px-0">Rechazo</td>
+                    <td>{{ votosRechazo }}</td>
                   </tr>
                   <tr>
                     <td class="text-center">
@@ -199,8 +199,8 @@ export default {
       mdiClose,
       mdiArrowLeft,
       mdiArrowRight,
-      votosBoric: 0,
-      votosKast: 0,
+      votosApruebo: 0,
+      votosRechazo: 0,
       votosNulo: 0,
       votosBlanco: 0,
       dialogLimpiar: false,
@@ -208,11 +208,11 @@ export default {
     }
   },
   mounted() {
-    if (localStorage.votosBoric) {
-      this.votosBoric = parseInt(localStorage.votosBoric) || 0;
+    if (localStorage.votosApruebo) {
+      this.votosApruebo = parseInt(localStorage.votosApruebo) || 0;
     }
-    if (localStorage.votosKast) {
-      this.votosKast = parseInt(localStorage.votosKast) || 0;
+    if (localStorage.votosRechazo) {
+      this.votosRechazo = parseInt(localStorage.votosRechazo) || 0;
     }
     if (localStorage.votosNulo) {
       this.votosNulo = parseInt(localStorage.votosNulo) || 0;
@@ -222,11 +222,11 @@ export default {
     }
   },
   watch: {
-    votosBoric(aVotosBoric) {
-      localStorage.votosBoric = aVotosBoric;
+    votosApruebo(aVotosApruebo) {
+      localStorage.votosApruebo = aVotosApruebo;
     },
-    votosKast(aVotosKast) {
-      localStorage.votosKast = aVotosKast;
+    votosRechazo(aVotosRechazo) {
+      localStorage.votosRechazo = aVotosRechazo;
     },
     votosNulo(aVotosNulo) {
       localStorage.votosNulo = aVotosNulo;
@@ -237,13 +237,13 @@ export default {
   },
   computed: {
    votosTotal() {
-    return this.votosBoric + this.votosKast + this.votosNulo + this.votosBlanco;
+    return this.votosApruebo + this.votosRechazo + this.votosNulo + this.votosBlanco;
    }
   },
   methods: {
     reset() {
-      this.votosBoric = 0
-      this.votosKast = 0
+      this.votosApruebo = 0
+      this.votosRechazo = 0
       this.votosNulo = 0
       this.votosBlanco = 0
       this.dialogLimpiar = false
@@ -265,12 +265,12 @@ export default {
       }
       this.initVibrate(options)
       switch (tipo) {
-        case 'boric':
-          if (this.votosBoric + numero < 0) return this.votosBoric = 0
-          return this.votosBoric += numero
-        case 'kast':
-          if (this.votosKast + numero < 0) return this.votosKast = 0
-          return this.votosKast += numero
+        case 'apruebo':
+          if (this.votosApruebo + numero < 0) return this.votosApruebo = 0
+          return this.votosApruebo += numero
+        case 'rechazo':
+          if (this.votosRechazo + numero < 0) return this.votosRechazo = 0
+          return this.votosRechazo += numero
         case 'nulo':
           if (this.votosNulo + numero < 0) return this.votosNulo = 0
           return this.votosNulo += numero

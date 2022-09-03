@@ -13,7 +13,7 @@
       <Conteo/>
     </v-main>
     <v-footer fixed>
-      <a style="text-decoration: none" href="https://www.seguimos.cl" target="_blank" class="black--text">🌳 Seguimos</a>
+      <a style="text-decoration: none" href="https://github.com/seguimos/conteo/" target="_blank" class="black--text">🌳 Github</a>
     </v-footer>
   </v-app>
 </template>
